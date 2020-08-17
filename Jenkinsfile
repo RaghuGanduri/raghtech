@@ -20,8 +20,9 @@ pipeline {
 				
 				echo "build completed"
             }
+		}
 
-            stage('Deploy') {
+        stage('Deploy') {
             steps {
 			    
 				echo "build completed"

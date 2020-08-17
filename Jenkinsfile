@@ -8,14 +8,19 @@ pipeline {
     }
 
     stages {
+	
+		stage('OtpService Checkout') {
+            steps {
+				echo "check otpservice"
+                deleteDir()
+                dir("otpserv") {
+                    git url: 'https://github.com/sathkaalapp/PandithaAPIs.git',
+                        branch: 'otpservice'
+                }
+            }
+        }
         stage('Build') {
             steps {
-			    
-                // Get some code from a GitHub repository
-                git 'https://github.com/sathkaalapp/PandithaAPIs.git'
-				bat 'cd PandithaAPIs'
-				git 'checkout otpservice'
-
 				echo "building the project"
                 // To run Maven on a Windows agent, use
                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
@@ -26,7 +31,6 @@ pipeline {
 
         stage('Deploy') {
             steps {
-			    
 				echo "build completed"
 				bat "mvn spring-boot:run"
             }

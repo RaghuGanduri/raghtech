@@ -13,7 +13,8 @@ pipeline {
 			    
                 // Get some code from a GitHub repository
                 git 'https://github.com/sathkaalapp/PandithaAPIs.git'
-				git 'checkout origin/otpservice'
+				cd 'PandithaAPIs'
+				git 'checkout otpservice'
 
 				echo "building the project"
                 // To run Maven on a Windows agent, use

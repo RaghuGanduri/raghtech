@@ -12,11 +12,8 @@ pipeline {
 		stage('OtpService Checkout') {
             steps {
 				echo "check otpservice"
-                deleteDir()
-                dir("otpserv") {
-                    git url: 'https://github.com/sathkaalapp/PandithaAPIs.git',
-                        branch: 'otpservice'
-                }
+                git url: 'https://github.com/sathkaalapp/PandithaAPIs.git',
+                    branch: 'otpservice'
             }
         }
         stage('Build') {

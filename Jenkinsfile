@@ -12,7 +12,8 @@ pipeline {
             steps {
 			    
                 // Get some code from a GitHub repository
-                git 'https://github.com/RaghuGanduri/raghtech.git'
+                git 'https://github.com/sathkaalapp/PandithaAPIs.git'
+				git 'checkout otpservice'
 
 				echo "building the project"
                 // To run Maven on a Windows agent, use

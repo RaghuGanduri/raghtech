@@ -13,7 +13,7 @@ pipeline {
 			    
                 // Get some code from a GitHub repository
                 git 'https://github.com/sathkaalapp/PandithaAPIs.git'
-				cd 'PandithaAPIs'
+				bat 'cd PandithaAPIs'
 				git 'checkout otpservice'
 
 				echo "building the project"
